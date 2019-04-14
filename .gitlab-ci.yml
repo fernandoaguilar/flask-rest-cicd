@@ -1,11 +1,19 @@
-test:
+test (python 3.5):
   script:
-  # this configures Django application to use attached postgres database that is run on `postgres` host
-  - export DATABASE_URL=postgres://postgres:@postgres:5432/python-test-app
-  - apt-get update -qy
-  - apt-get install -y python-dev python-pip
-  - pip install -r requirements.txt
-  - pytest
+    # this configures Django application to use attached postgres database that is run on `postgres` host
+    - export DATABASE_URL=postgres://postgres:@postgres:5432/python-test-app
+    - apt-get update -qy
+    - apt-get install -y python-dev python-pip
+    - pip install -r requirements.txt
+    - tox -e py35
+test (python 3.6):
+  script:
+    # this configures Django application to use attached postgres database that is run on `postgres` host
+    - export DATABASE_URL=postgres://postgres:@postgres:5432/python-test-app
+    - apt-get update -qy
+    - apt-get install -y python-dev python-pip
+    - pip install -r requirements.txt
+    - tox -e py36
 
 #staging:
 #  type: deploy
