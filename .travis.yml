@@ -3,16 +3,16 @@ python:
   - "3.4"
   - "3.5"
 
-stages:
-  - name: "deploy staging"
-    if: branch = develop
-  - name: "deploy production"
-    if: branch = master
+#stages:
+#  - name: "deploy staging"
+#    if: branch = develop
+#  - name: "deploy production"
+#    if: branch = master
 
 jobs:
   include:
     - stage: test
-      install: - pip install -r requirements-dev.txt
+      install: pip install -r requirements-dev.txt
       script: pytest
     - stage: deploy
       name: "deploy staging"
