@@ -3,13 +3,6 @@ python:
   - "3.5"
   - "3.6"
 
-stages:
-  - test
-  - name: deploy staging
-    if: branch = develop
-  - name: deploy production
-    if: branch = master
-
 jobs:
   include:
     - install:
