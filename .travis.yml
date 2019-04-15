@@ -19,6 +19,7 @@ jobs:
           app: "FlaskGitlabCi"
           env: "FlaskGitlabCi-staging"
           bucket_name: "elasticbeanstalk-us-east-1-347446650592"
+          if: branch = develop
 #    - stage: deploy production
 #      script: skip
 #      deploy:
