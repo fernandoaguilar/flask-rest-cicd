@@ -4,8 +4,8 @@ install: pip install -r requirements-dev.txt
 script: pytest
 jobs:
   include:
-      - python: 3.4
-      - python: 3.5
+    - python: 3.4
+    - python: 3.5
     - stage: deploy
       name: "deploy staging"
       script: skip     # usually you do not want to rerun any tests
