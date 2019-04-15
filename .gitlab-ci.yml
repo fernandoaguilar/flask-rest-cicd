@@ -20,7 +20,7 @@ test (python 3.6):
 #    - tox -e py36
 
 staging:
-  image: coxauto/aws-ebcli
+  image: python:3.6
   type: deploy
   variables:
     PROJECT_ENV: develop
@@ -34,7 +34,7 @@ staging:
     - develop
 
 production:
-  image: coxauto/aws-ebcli
+  image: python:3.6
   script:
   - apt-get update -qy
   - apt-get install -y - python-dev python-pip
