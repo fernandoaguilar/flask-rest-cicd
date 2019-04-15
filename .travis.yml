@@ -3,11 +3,12 @@ python:
   - "3.5"
   - "3.6"
 
+install:
+    - pip install -r requirements-dev.txt
+script: pytest
+
 jobs:
   include:
-    - install:
-        - pip install -r requirements-dev.txt
-      script: pytest
     - stage: deploy
       script: skip     # usually you do not want to rerun any tests
       deploy:
