@@ -9,7 +9,7 @@ from myapi.commons.pagination import paginate
 
 class HomePage(Resource):
     def get(self):
-        return 'Hello world!'
+        return 'Fernando says hi!'
 
 
 class UserSchema(ma.ModelSchema):
