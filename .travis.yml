@@ -2,33 +2,41 @@ language: python
 python:
   - "3.5"
   - "3.6"
-# command to install dependencies
-install:
-  - pip install -r requirements-dev.txt
-# command to run tests
-script:
-  - pytest
 
-deploy:
-  - provider: elasticbeanstalk
-    access_key_id:
-      secure: "Encrypted L+zqqfjUfqMiNZl+j+QRrZ6zC3ovUu4f5bg7qR/sHmEiX3spIIjuGeHnaCWhhu/Xhqp7eK95ZTd/94sr2WtwxOzgSkdXmZIXzmcPWsm/wGcwv/39yCfjrAQ3U5rPzijfmvzWtlCaBS14VP2RxmKlXodtmtD/dg1CL24iF05LGgGHW+lMsnRCkkStOtlNMeVj8xaAEssWh3Fj/Vi6w8N+HTwCP2HMX+dAiVOjMdV28EWAzvmWLgIs3AhWWAGM/VLF6sreofResCqXb9LKmjwJnEEZJqn7R218tPE7UmRw4wJRJvlxjcjXjPMfyA0YR5Vat+PSfVi4aS3ts1X8dEf7x+jbV9G/6kzt7Ev54xa6NlfGEMGU1m03/14iJyC3G0UAwaVElRGeUZq/VEOzu9hD+CjSYNO/QIQX8f1H3AY19dB66O69fauyOgMvjk8745vZEZdNyBJacH6u+xErIFp0bH0klmjo9jpKmyr8Glhw9Pjz+SRAsrKMf18rKBCm35TJ12D5qVV3VjeafEbWeVNyXiyfXihZX0hC/FJF3g+pTk4EfQ/PZK6mLMhjL44LZnB03P4/UIKjR4OUt9eHf0RvVoTN7kWjJpCim9M26GJgIKVLTEkS39jcxqZ8x9L1AEpkgNLA4kbGhr26xTmeEnrAZyR2AMbOmYtk8l0nt0sI5PI="
-    secret_access_key:
-      secure: "Encypted zMH9Zpu0AtjUTg+1EDYZFShUEmpqM/MYI2XTgVAKWKTDPsHxcmfM5Tgi3se2p1N9eeckKRyJzzIY47sgdLb48Vn7+lrV5wqOaAcUhRAdyU17Gf/5Wgi/Oh+/xTTYoFf28OdCFRnNhuX1Y8rBjG79Dl9paCjDmOSQ3v65FIao0ePUDRAsL925L6ReWbthhA6YFg7OLQTOMe7Kr3vTWLHj2PPrQvEPajq2mic44jN0JlQqtF/bIt4RgyDEO+Gl4hLvQHTGYz2aNqYFv+iCVcrABVXJAXj//AknUz1QPs/8a+vwXiok3FuXI6M+uN7x+MoZscvamfYp109vlokXK59AGIQVp9d5xH4Inx+jsP4LpPQBV8U4IKSterCJK4c01+rmdtjQ3wmxC4scho25J9VAA3YO/VzFtI9JPmtclDe0KxYWECAZvn0J1Hpm4pEnQoLacOBQqMswAWyk54OVq/ZN5CT9FjSym/A+dYe0dYCpbsfr+IPnoOdttV1Bf98vGxCoz4vrkHf6Vc6SGMnEnPvi4P3xbv2H956+nMcmpdSuRGFPH2ERjSGBXmAoTF1l7pWBHoa33jL6HcGPQPfoNCh8UAgdNU3vd0EAFMTp+UYQ+GAnd3JkiXJ3INcGRPAi6Qzk9UihqAhuGQlCz2aORRtaFAzoenGls/4pBK3jRoxKUQg="
-    region: "us-east-1"
-    app: "FlaskGitlabCi"
-    env: "FlaskGitlabCi-staging"
-    bucket_name: "elasticbeanstalk-us-east-1-347446650592"
-    on:
-      branch: develop
-  - provider: elasticbeanstalk
-    access_key_id:
-      secure: "Encrypted L+zqqfjUfqMiNZl+j+QRrZ6zC3ovUu4f5bg7qR/sHmEiX3spIIjuGeHnaCWhhu/Xhqp7eK95ZTd/94sr2WtwxOzgSkdXmZIXzmcPWsm/wGcwv/39yCfjrAQ3U5rPzijfmvzWtlCaBS14VP2RxmKlXodtmtD/dg1CL24iF05LGgGHW+lMsnRCkkStOtlNMeVj8xaAEssWh3Fj/Vi6w8N+HTwCP2HMX+dAiVOjMdV28EWAzvmWLgIs3AhWWAGM/VLF6sreofResCqXb9LKmjwJnEEZJqn7R218tPE7UmRw4wJRJvlxjcjXjPMfyA0YR5Vat+PSfVi4aS3ts1X8dEf7x+jbV9G/6kzt7Ev54xa6NlfGEMGU1m03/14iJyC3G0UAwaVElRGeUZq/VEOzu9hD+CjSYNO/QIQX8f1H3AY19dB66O69fauyOgMvjk8745vZEZdNyBJacH6u+xErIFp0bH0klmjo9jpKmyr8Glhw9Pjz+SRAsrKMf18rKBCm35TJ12D5qVV3VjeafEbWeVNyXiyfXihZX0hC/FJF3g+pTk4EfQ/PZK6mLMhjL44LZnB03P4/UIKjR4OUt9eHf0RvVoTN7kWjJpCim9M26GJgIKVLTEkS39jcxqZ8x9L1AEpkgNLA4kbGhr26xTmeEnrAZyR2AMbOmYtk8l0nt0sI5PI="
-    secret_access_key:
-      secure: "Encypted zMH9Zpu0AtjUTg+1EDYZFShUEmpqM/MYI2XTgVAKWKTDPsHxcmfM5Tgi3se2p1N9eeckKRyJzzIY47sgdLb48Vn7+lrV5wqOaAcUhRAdyU17Gf/5Wgi/Oh+/xTTYoFf28OdCFRnNhuX1Y8rBjG79Dl9paCjDmOSQ3v65FIao0ePUDRAsL925L6ReWbthhA6YFg7OLQTOMe7Kr3vTWLHj2PPrQvEPajq2mic44jN0JlQqtF/bIt4RgyDEO+Gl4hLvQHTGYz2aNqYFv+iCVcrABVXJAXj//AknUz1QPs/8a+vwXiok3FuXI6M+uN7x+MoZscvamfYp109vlokXK59AGIQVp9d5xH4Inx+jsP4LpPQBV8U4IKSterCJK4c01+rmdtjQ3wmxC4scho25J9VAA3YO/VzFtI9JPmtclDe0KxYWECAZvn0J1Hpm4pEnQoLacOBQqMswAWyk54OVq/ZN5CT9FjSym/A+dYe0dYCpbsfr+IPnoOdttV1Bf98vGxCoz4vrkHf6Vc6SGMnEnPvi4P3xbv2H956+nMcmpdSuRGFPH2ERjSGBXmAoTF1l7pWBHoa33jL6HcGPQPfoNCh8UAgdNU3vd0EAFMTp+UYQ+GAnd3JkiXJ3INcGRPAi6Qzk9UihqAhuGQlCz2aORRtaFAzoenGls/4pBK3jRoxKUQg="
-    region: "us-east-1"
-    app: "FlaskGitlabCi"
-    env: "FlaskGitlabCi-prod"
-    bucket_name: "elasticbeanstalk-us-east-1-347446650592"
-    on:
-      branch: master
+stages:
+  - test
+  - name: deploy staging
+    if: branch = develop
+  - name: deploy production
+    if: branch = master
+
+jobs:
+  include:
+    - install:
+        - pip install -r requirements-dev.txt
+      script: pytest
+    - stage: deploy
+      script: skip     # usually you do not want to rerun any tests
+      deploy:
+        - provider: elasticbeanstalk
+          access_key_id:
+            secure: "Encrypted L+zqqfjUfqMiNZl+j+QRrZ6zC3ovUu4f5bg7qR/sHmEiX3spIIjuGeHnaCWhhu/Xhqp7eK95ZTd/94sr2WtwxOzgSkdXmZIXzmcPWsm/wGcwv/39yCfjrAQ3U5rPzijfmvzWtlCaBS14VP2RxmKlXodtmtD/dg1CL24iF05LGgGHW+lMsnRCkkStOtlNMeVj8xaAEssWh3Fj/Vi6w8N+HTwCP2HMX+dAiVOjMdV28EWAzvmWLgIs3AhWWAGM/VLF6sreofResCqXb9LKmjwJnEEZJqn7R218tPE7UmRw4wJRJvlxjcjXjPMfyA0YR5Vat+PSfVi4aS3ts1X8dEf7x+jbV9G/6kzt7Ev54xa6NlfGEMGU1m03/14iJyC3G0UAwaVElRGeUZq/VEOzu9hD+CjSYNO/QIQX8f1H3AY19dB66O69fauyOgMvjk8745vZEZdNyBJacH6u+xErIFp0bH0klmjo9jpKmyr8Glhw9Pjz+SRAsrKMf18rKBCm35TJ12D5qVV3VjeafEbWeVNyXiyfXihZX0hC/FJF3g+pTk4EfQ/PZK6mLMhjL44LZnB03P4/UIKjR4OUt9eHf0RvVoTN7kWjJpCim9M26GJgIKVLTEkS39jcxqZ8x9L1AEpkgNLA4kbGhr26xTmeEnrAZyR2AMbOmYtk8l0nt0sI5PI="
+          secret_access_key:
+            secure: "Encypted zMH9Zpu0AtjUTg+1EDYZFShUEmpqM/MYI2XTgVAKWKTDPsHxcmfM5Tgi3se2p1N9eeckKRyJzzIY47sgdLb48Vn7+lrV5wqOaAcUhRAdyU17Gf/5Wgi/Oh+/xTTYoFf28OdCFRnNhuX1Y8rBjG79Dl9paCjDmOSQ3v65FIao0ePUDRAsL925L6ReWbthhA6YFg7OLQTOMe7Kr3vTWLHj2PPrQvEPajq2mic44jN0JlQqtF/bIt4RgyDEO+Gl4hLvQHTGYz2aNqYFv+iCVcrABVXJAXj//AknUz1QPs/8a+vwXiok3FuXI6M+uN7x+MoZscvamfYp109vlokXK59AGIQVp9d5xH4Inx+jsP4LpPQBV8U4IKSterCJK4c01+rmdtjQ3wmxC4scho25J9VAA3YO/VzFtI9JPmtclDe0KxYWECAZvn0J1Hpm4pEnQoLacOBQqMswAWyk54OVq/ZN5CT9FjSym/A+dYe0dYCpbsfr+IPnoOdttV1Bf98vGxCoz4vrkHf6Vc6SGMnEnPvi4P3xbv2H956+nMcmpdSuRGFPH2ERjSGBXmAoTF1l7pWBHoa33jL6HcGPQPfoNCh8UAgdNU3vd0EAFMTp+UYQ+GAnd3JkiXJ3INcGRPAi6Qzk9UihqAhuGQlCz2aORRtaFAzoenGls/4pBK3jRoxKUQg="
+          region: "us-east-1"
+          app: "FlaskGitlabCi"
+          env: "FlaskGitlabCi-staging"
+          bucket_name: "elasticbeanstalk-us-east-1-347446650592"
+          on:
+            branch: develop
+        - provider: elasticbeanstalk
+          access_key_id:
+            secure: "Encrypted L+zqqfjUfqMiNZl+j+QRrZ6zC3ovUu4f5bg7qR/sHmEiX3spIIjuGeHnaCWhhu/Xhqp7eK95ZTd/94sr2WtwxOzgSkdXmZIXzmcPWsm/wGcwv/39yCfjrAQ3U5rPzijfmvzWtlCaBS14VP2RxmKlXodtmtD/dg1CL24iF05LGgGHW+lMsnRCkkStOtlNMeVj8xaAEssWh3Fj/Vi6w8N+HTwCP2HMX+dAiVOjMdV28EWAzvmWLgIs3AhWWAGM/VLF6sreofResCqXb9LKmjwJnEEZJqn7R218tPE7UmRw4wJRJvlxjcjXjPMfyA0YR5Vat+PSfVi4aS3ts1X8dEf7x+jbV9G/6kzt7Ev54xa6NlfGEMGU1m03/14iJyC3G0UAwaVElRGeUZq/VEOzu9hD+CjSYNO/QIQX8f1H3AY19dB66O69fauyOgMvjk8745vZEZdNyBJacH6u+xErIFp0bH0klmjo9jpKmyr8Glhw9Pjz+SRAsrKMf18rKBCm35TJ12D5qVV3VjeafEbWeVNyXiyfXihZX0hC/FJF3g+pTk4EfQ/PZK6mLMhjL44LZnB03P4/UIKjR4OUt9eHf0RvVoTN7kWjJpCim9M26GJgIKVLTEkS39jcxqZ8x9L1AEpkgNLA4kbGhr26xTmeEnrAZyR2AMbOmYtk8l0nt0sI5PI="
+          secret_access_key:
+            secure: "Encypted zMH9Zpu0AtjUTg+1EDYZFShUEmpqM/MYI2XTgVAKWKTDPsHxcmfM5Tgi3se2p1N9eeckKRyJzzIY47sgdLb48Vn7+lrV5wqOaAcUhRAdyU17Gf/5Wgi/Oh+/xTTYoFf28OdCFRnNhuX1Y8rBjG79Dl9paCjDmOSQ3v65FIao0ePUDRAsL925L6ReWbthhA6YFg7OLQTOMe7Kr3vTWLHj2PPrQvEPajq2mic44jN0JlQqtF/bIt4RgyDEO+Gl4hLvQHTGYz2aNqYFv+iCVcrABVXJAXj//AknUz1QPs/8a+vwXiok3FuXI6M+uN7x+MoZscvamfYp109vlokXK59AGIQVp9d5xH4Inx+jsP4LpPQBV8U4IKSterCJK4c01+rmdtjQ3wmxC4scho25J9VAA3YO/VzFtI9JPmtclDe0KxYWECAZvn0J1Hpm4pEnQoLacOBQqMswAWyk54OVq/ZN5CT9FjSym/A+dYe0dYCpbsfr+IPnoOdttV1Bf98vGxCoz4vrkHf6Vc6SGMnEnPvi4P3xbv2H956+nMcmpdSuRGFPH2ERjSGBXmAoTF1l7pWBHoa33jL6HcGPQPfoNCh8UAgdNU3vd0EAFMTp+UYQ+GAnd3JkiXJ3INcGRPAi6Qzk9UihqAhuGQlCz2aORRtaFAzoenGls/4pBK3jRoxKUQg="
+          region: "us-east-1"
+          app: "FlaskGitlabCi"
+          env: "FlaskGitlabCi-prod"
+          bucket_name: "elasticbeanstalk-us-east-1-347446650592"
+          on:
+            branch: master
