@@ -18,12 +18,16 @@ test (python 3.6):
     - tox -e py36
 
 staging:
+  image: python:3.6
   type: deploy
+  variables:
+    PROJECT_ENV: develop
+  environment: staging
   script:
-  - apt-get update -qy
-  - apt-get install -y - python-dev python-pip
-  - pip install awsebcli --upgrade --user
-  - eb deploy  --env-group-suffix staging
+    - pip install awsebcli --upgrade --ignore-installed
+    - eb init eb-dev-pythonapp -p python -r ap-east-1
+    - eb use FlaskGitlabCi-staging
+    - eb deploy eb-dev-pythonenv -l eb-python-dev-$CI_COMMIT_SHA
   only:
   - develop
 
