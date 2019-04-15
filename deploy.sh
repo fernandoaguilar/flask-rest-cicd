@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# Install AWS CLI
-pip install awsebcli --upgrade --ignore-installed
 # Prepare deployment
 mkdir ~/.aws/
 touch ~/.aws/credentials
