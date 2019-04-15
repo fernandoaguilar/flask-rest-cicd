@@ -1,11 +1,5 @@
 language: python
 
-stages:
-  - name: deploy staging
-    if: branch = develop
-  - name: deploy production
-    if: branch = master
-
 install: pip install -r requirements-dev.txt
 script: pytest
 jobs:
