@@ -1,19 +1,17 @@
 language: python
 
-#stages:
-#  - name: "deploy staging"
-#    if: branch = develop
-#  - name: "deploy production"
-#    if: branch = master
+stages:
+  - name: "deploy staging"
+    if: branch = develop
+  - name: "deploy production"
+    if: branch = master
 
+install: pip install -r requirements-dev.txt
+script: pytest
 jobs:
   include:
-    - stage: test
-      python:
-        - "3.4"
-        - "3.5"
-      install: pip install -r requirements-dev.txt
-      script: pytest
+      - python: 3.4
+      - python: 3.5
     - stage: deploy
       name: "deploy staging"
       script: skip     # usually you do not want to rerun any tests
