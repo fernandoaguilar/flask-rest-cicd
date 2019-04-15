@@ -7,6 +7,11 @@ from myapi.extensions import ma, db
 from myapi.commons.pagination import paginate
 
 
+class HomePage(Resource):
+    def get(self):
+        return 'Hello world!'
+
+
 class UserSchema(ma.ModelSchema):
 
     password = ma.String(load_only=True, required=True)
