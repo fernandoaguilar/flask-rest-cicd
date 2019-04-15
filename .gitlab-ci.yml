@@ -42,5 +42,3 @@ production:
   - eb deploy --env-group-suffix prod
   only:
   - master
-  when:
-    - manual
