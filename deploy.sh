@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+pip install awsebcli --upgrade --ignore-installed
+
 # Prepare deployment
 echo "mkdir"
 mkdir ~/.aws/
