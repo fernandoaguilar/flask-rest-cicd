@@ -28,6 +28,7 @@ staging:
     name: staging
     url: http://flaskgitlabci-staging.g2mtyzmnps.us-east-1.elasticbeanstalk.com/api/v1/home
   script:
+    - chmod +x deploy.sh
     - ./deploy.sh
   only:
     - develop
