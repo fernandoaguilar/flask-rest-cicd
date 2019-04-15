@@ -23,7 +23,7 @@ staging:
   variables:
     PROJECT_ENV: develop
   environment: staging
-  script:
+  script: deploy.sh
     - pip install awsebcli --upgrade --ignore-installed
     - mkdir ~/.aws/
     - touch ~/.aws/credentials
