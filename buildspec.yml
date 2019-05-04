@@ -10,8 +10,8 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      python: 3.7.1
+    # runtime-versions:
+    #   python: 3.7.1
       # runtime: version
     commands:
       - pip install -r requirements-dev.txt
