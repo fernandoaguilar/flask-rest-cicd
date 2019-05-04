@@ -1,7 +1,5 @@
 version: 0.2
 
-run-as: ubuntu
-
 # env:
 #   variables:
 #     key: "value"
@@ -12,7 +10,6 @@ run-as: ubuntu
 
 phases:
   install:
-    run-as: ubuntu
     runtime-versions:
       python: 3.6
       # runtime: version
