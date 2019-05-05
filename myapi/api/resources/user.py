@@ -13,9 +13,9 @@ class HomePage(Resource):
 
 class HomePage2(Resource):
     def get(self):
-        return 'Home page 2'
+        return 'Hello World'
 
-        
+
 class UserSchema(ma.ModelSchema):
 
     password = ma.String(load_only=True, required=True)
