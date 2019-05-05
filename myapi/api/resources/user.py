@@ -13,7 +13,7 @@ class HomePage(Resource):
 
 class HomePage2(Resource):
     def get(self):
-        return 'Hello World'
+        return 'Fernando wants tacos'
 
 
 class UserSchema(ma.ModelSchema):
