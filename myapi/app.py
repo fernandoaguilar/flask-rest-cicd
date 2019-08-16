@@ -7,12 +7,12 @@ from myapi.extensions import db, jwt, migrate, celery
 def create_app(config=None, testing=False, cli=False):
     """Application factory, used to create application
     """
-    app = Flask('myapi')
+    app = Flask(str('myapi'))
 
     configure_app(app, testing)
     configure_extensions(app, cli)
     register_blueprints(app)
-    init_celery(app)
+    # init_celery(app)
 
     return app
 

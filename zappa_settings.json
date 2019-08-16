@@ -1,0 +1,28 @@
+{
+    "dev": {
+        "app_function": "app.app",
+        "aws_region": "us-east-1", 
+        "profile_name": "default", 
+        "project_name": "flask-rest-cicd", 
+        "runtime": "python3.6",
+        "s3_bucket": "zappa-hd2610okh",
+        "environment_variables": {
+            "POSTGRES_USER": "POSTGRES_USER",
+            "POSTGRES_PW" : "<POSTGRES_PW>",
+            "POSTGRES_URL" : "<POSTGRES_URL>",
+            "POSTGRES_DB" :"<POSTGRES_DB>"
+        },
+        "exclude": ["*.pyc"],
+        "vpc_config" : {
+            "SubnetIds": [
+                "subnet-470b6722",
+                "subnet-6a6fe066",
+                "subnet-8187c4aa",
+                "subnet-945450e3",
+                "subnet-df247b86",
+                "subnet-fccb3fc1"
+            ],
+            "SecurityGroupIds": ["sg-56265231"]
+        }
+    }
+}
