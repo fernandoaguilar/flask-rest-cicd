@@ -1,8 +1,9 @@
+import random
 from flask import request
 from flask_restful import Resource
 from flask_jwt_extended import jwt_required
 
-from myapi.models import User
+from myapi.models import User, Food
 from myapi.extensions import ma, db
 from myapi.commons.pagination import paginate
 
@@ -11,9 +12,12 @@ class HomePage(Resource):
     def get(self):
         return 'Fernando says hi!'
 
+
 class HomePage2(Resource):
     def get(self):
-        return 'Fernando wants ramen'
+        all_foods = Food.query.all()
+        food = random.choice(all_foods)
+        return f'Fernando wants {food.name}'
 
 
 class UserSchema(ma.ModelSchema):
